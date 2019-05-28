@@ -1,13 +1,22 @@
-class Dinosaur {
-	// Requirement #4: Complete Dinosaur Class
+class Dinosaur extends Enemy{
+  final float TRIGGERED_SPEED_MULTIPLIER = 5;
+  float speed = 2f;
+  
+  void display(){
+    image(dinosaur, x, y);
+  }
 
-	final float TRIGGERED_SPEED_MULTIPLIER = 5;
+  void update(){
+    //int a = 1;
+    //if (x >= width || x <= 0) a*=-1;
 
-	// HINT: Player Detection in update()
-	/*
-	float currentSpeed = speed
-	If player is on the same row with me AND (it's on my right side when I'm going right OR on my left side when I'm going left){
-		currentSpeed *= TRIGGERED_SPEED_MULTIPLIER
-	}
-	*/
+    //x += speed * a;
+    x+=speed;
+    if(x >= width) x = -w;
+    //print("(",x,",",a,")");
+  }
+
+  Dinosaur(float x, float y){
+    super(x, y);
+  }
 }
