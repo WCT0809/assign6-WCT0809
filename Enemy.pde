@@ -20,4 +20,3 @@ class Enemy {
 		this.y = y;
 	}
 }
- 
